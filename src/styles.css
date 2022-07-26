@@ -95,4 +95,65 @@ h2 {
   :root {
     --dashboard-width: var(--full-dashboard-width);
   }
+}
+.dashboard {
+  grid-area: dash;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--dashboard-width);
+  height: 100%;
+  color: var(--dashboard-font-color);
+  background-color: var(--dashboard-bg-color);
+  transition: width var(--transition-time);
+}
+.dashboard .text,
+.dashboard h1 {
+  display: none;
+}
+.dashboard .media-object {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: var(--scale1);
+  transition: all var(--transition-time);
+}
+.dashboard .media-object:not(.dashboard-header):hover {
+  transform: scale(1.4);
+}
+.dashboard .media-object:hover .material-icons,
+.dashboard .media-object:hover .text {
+  text-shadow: 1px 1px 2px black;
+}
+.dashboard .dashboard-header {
+  justify-content: flex-start;
+  padding: 10px 0 0 10px;
+  margin-bottom: 40px;
+  gap: 10px;
+  font-size: var(--scale0);
+}
+.dashboard .dashboard-header i {
+  font-size: 48px;
+}
+.dashboard .dashboard-header h1 {
+  margin: 0;
+}
+.dashboard .settings {
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 900px) {
+  .dashboard .text,
+.dashboard h1 {
+    display: block;
+  }
+  .dashboard .media-object {
+    justify-content: flex-start;
+  }
+  .dashboard .media-object:not(.dashboard-header):hover {
+    transform: scale(1.1);
+  }
 }/*# sourceMappingURL=styles.css.map */
