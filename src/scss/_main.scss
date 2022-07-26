@@ -1,0 +1,43 @@
+main {
+  grid-area: main;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: var(--indent);
+  }
+
+  .project-cards {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: var(--indent);
+
+    border-left: 7px solid var(--extra-color);
+    border-radius: var(--b-radius);
+    background-color: var(--base-bg-color);
+    box-shadow: var(--box-shadow);
+    padding: var(--indent);
+    margin-bottom: var(--indent);
+  }
+
+  .icons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--indent);
+  }
+
+  .text {
+    color: gray;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  main .wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}

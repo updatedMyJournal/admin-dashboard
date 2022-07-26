@@ -307,4 +307,42 @@ aside .text {
   .trending {
     margin-bottom: calc(var(--indent) * 1.5);
   }
+}
+main {
+  grid-area: main;
+}
+main .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  -moz-column-gap: var(--indent);
+       column-gap: var(--indent);
+}
+main .project-cards {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: var(--indent);
+  border-left: 7px solid var(--extra-color);
+  border-radius: var(--b-radius);
+  background-color: var(--base-bg-color);
+  box-shadow: var(--box-shadow);
+  padding: var(--indent);
+  margin-bottom: var(--indent);
+}
+main .icons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--indent);
+}
+main .text {
+  color: gray;
+}
+main h3 {
+  margin: 0;
+}
+
+@media screen and (min-width: 425px) {
+  main .wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }/*# sourceMappingURL=styles.css.map */
