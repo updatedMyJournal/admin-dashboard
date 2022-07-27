@@ -5,15 +5,17 @@ $double-less-h-p: calc($h-padding / 2);
 
 .dashboard {
   grid-area: dash;
-  position: fixed;
-  left: 0;
-  top: 0;
-
   width: var(--dashboard-width);
   height: 100%;
   color: var(--dashboard-font-color);
   background-color: var(--dashboard-bg-color);
   transition: width var(--transition-time);
+
+  .wrapper {
+    position: sticky;
+    left: 0;
+    top: 0;
+  }
 
   .text,
   h1 {

@@ -32,6 +32,7 @@ html {
 }
 
 body {
+  height: 100%;
   min-height: 100%;
   margin: 0;
   background-color: var(--container-bg-color);
@@ -40,7 +41,9 @@ body {
 .container {
   display: grid;
   grid-template-columns: var(--dashboard-width) minmax(230px, 1fr);
-  grid-template-areas: ". head" ". aside" ". aside" ". main";
+  grid-template-rows: repeat(3, auto) 1fr;
+  grid-template-areas: "dash head" "dash aside" "dash aside" "dash main";
+  height: 100%;
 }
 
 img {
@@ -91,7 +94,8 @@ h2 {
 @media screen and (min-width: 768px) {
   .container {
     grid-template-columns: var(--dashboard-width) 1fr var(--aside-width);
-    grid-template-areas: ". head head" ". main aside" ". main aside";
+    grid-template-rows: auto 100%;
+    grid-template-areas: "dash head head" "dash main aside" "dash main aside";
   }
 }
 
@@ -103,15 +107,18 @@ h2 {
 
 .dashboard {
   grid-area: dash;
-  position: fixed;
-  left: 0;
-  top: 0;
-
   width: var(--dashboard-width);
   height: 100%;
   color: var(--dashboard-font-color);
   background-color: var(--dashboard-bg-color);
   transition: width var(--transition-time);
+}
+
+.dashboard .wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
 }
 
 .dashboard .text,
@@ -124,6 +131,7 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 15px;
+
   cursor: pointer;
   padding: 10px 20px;
   font-size: var(--scale1);
@@ -364,6 +372,7 @@ main .project-cards {
   flex-flow: column nowrap;
   justify-content: space-between;
   gap: var(--indent);
+
   border-left: 7px solid var(--extra-color);
   border-radius: var(--b-radius);
   background-color: var(--base-bg-color);
