@@ -106,12 +106,6 @@ h2 {
   background-color: var(--dashboard-bg-color);
   transition: width var(--transition-time);
 }
-.dashboard .wrapper {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  top: 0;
-}
 .dashboard .text,
 .dashboard h1 {
   display: none;
@@ -150,6 +144,14 @@ h2 {
   margin-top: 40px;
 }
 
+@media screen and (min-height: 540px) {
+  .dashboard .wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    top: 0;
+  }
+}
 @media screen and (min-width: 900px) {
   .dashboard .text,
 .dashboard h1 {

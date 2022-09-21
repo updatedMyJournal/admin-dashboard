@@ -11,12 +11,6 @@ $double-less-h-p: calc($h-padding / 2);
   background-color: var(--dashboard-bg-color);
   transition: width var(--transition-time);
 
-  .wrapper {
-    position: sticky;
-    left: 0;
-    top: 0;
-  }
-
   .text,
   h1 {
     display: none;
@@ -61,6 +55,16 @@ $double-less-h-p: calc($h-padding / 2);
 
   .settings {
     margin-top: $double-more-h-p;
+  }
+}
+
+@media screen and (min-height: 540px) {
+  .dashboard {
+    .wrapper {
+      position: sticky;
+      left: 0;
+      top: 0;
+    }
   }
 }
 
